@@ -61,6 +61,7 @@
         <dependency>
             <groupId>com.alibaba.spring</groupId>
             <artifactId>spring-context-support</artifactId>
+            <optional>true</optional>
         </dependency>
 
         <!-- Test Dependencies -->
