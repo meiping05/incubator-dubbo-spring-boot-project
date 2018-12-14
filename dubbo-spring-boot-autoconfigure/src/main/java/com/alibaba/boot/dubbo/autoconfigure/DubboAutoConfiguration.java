@@ -94,12 +94,12 @@ public class DubboAutoConfiguration {
         return new ServiceAnnotationBeanPostProcessor(packagesToScan);
     }
 
-//    @ConditionalOnClass(Binder.class)
-//    @Bean
-//    @Scope(scopeName = SCOPE_PROTOTYPE)
-//    public RelaxedDubboConfigBinder relaxedDubboConfigBinder() {
-//        return new RelaxedDubboConfigBinder();
-//    }
+    @ConditionalOnClass(Binder.class)
+    @Bean
+    @Scope(scopeName = SCOPE_PROTOTYPE)
+    public RelaxedDubboConfigBinder relaxedDubboConfigBinder() {
+        return new RelaxedDubboConfigBinder();
+    }
 
     /**
      * Creates {@link ReferenceAnnotationBeanPostProcessor} Bean if Absent

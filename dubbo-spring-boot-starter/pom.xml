@@ -45,6 +45,11 @@
             <artifactId>dubbo</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.alibaba.spring</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+
         <!-- ZK -->
         <dependency>
             <groupId>org.apache.zookeeper</groupId>

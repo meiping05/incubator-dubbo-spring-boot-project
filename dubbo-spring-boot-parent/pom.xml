@@ -38,7 +38,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.0.3.RELEASE</spring-boot.version>
-        <dubbo.version>2.6.2</dubbo.version>
+        <dubbo.version>2.6.5</dubbo.version>
         <zkclient.version>0.2</zkclient.version>
         <zookeeper.version>3.4.9</zookeeper.version>
         <curator-framework.version>2.12.0</curator-framework.version>
@@ -57,6 +57,7 @@
         <apache-rat-plugin.version>0.12</apache-rat-plugin.version>
         <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
         <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
+        <alibaba_spring_context_support_version>1.0.2</alibaba_spring_context_support_version>
     </properties>
 
     <dependencyManagement>
@@ -133,6 +134,13 @@
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-framework</artifactId>
                 <version>${curator-framework.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.alibaba.spring</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${alibaba_spring_context_support_version}</version>
             </dependency>
 
         </dependencies>
@@ -394,59 +402,59 @@
                     </systemProperties>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.rat</groupId>
-                <artifactId>apache-rat-plugin</artifactId>
-                <version>${apache-rat-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>verify.rat</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                        <configuration>
-                            <excludes>
-                                <exclude>**/*.versionsBackup</exclude>
-                                <exclude>**/.idea/</exclude>
-                                <exclude>**/*.iml</exclude>
-                                <exclude>**/*.txt</exclude>
-                                <exclude>**/*.load</exclude>
-                                <exclude>**/*.flex</exclude>
-                                <exclude>**/*.fc</exclude>
-                                <exclude>**/*.javascript</exclude>
-                                <exclude>**/*.properties</exclude>
-                                <exclude>**/*.thrift</exclude>
-                                <exclude>**/*.sh</exclude>
-                                <exclude>**/*.bat</exclude>
-                                <exclude>**/*.md</exclude>
-                                <exclude>.git/</exclude>
-                                <exclude>.gitignore</exclude>
-                                <!-- ASF jenkins box puts the Maven repo in our root directory. -->
-                                <exclude>.repository/</exclude>
-                                <exclude>**/.settings/*</exclude>
-                                <exclude>**/.classpath</exclude>
-                                <exclude>**/.project</exclude>
-                                <exclude>**/target/**</exclude>
-                                <exclude>**/*.log</exclude>
-                                <exclude>CODE_OF_CONDUCT.md</exclude>
-                                <exclude>.codecov.yml</exclude>
-                                <exclude>.travis.yml</exclude>
-                                <exclude>PULL_REQUEST_TEMPLATE.md</exclude>
-                                <exclude>CONTRIBUTING.md</exclude>
-                                <exclude>README.md</exclude>
-                                <exclude>README_CN.md</exclude>
-                                <exclude>**/codestyle/*</exclude>
-                                <exclude>**/resources/META-INF/**</exclude>
-                                <exclude>**/*.factories</exclude>
-                                <exclude>**/*.provides</exclude>
-                                <exclude>**/*.properties</exclude>
-                                <exclude>**/*.json</exclude>
-                            </excludes>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.rat</groupId>-->
+                <!--<artifactId>apache-rat-plugin</artifactId>-->
+                <!--<version>${apache-rat-plugin.version}</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>verify.rat</id>-->
+                        <!--<phase>verify</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>check</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<excludes>-->
+                                <!--<exclude>**/*.versionsBackup</exclude>-->
+                                <!--<exclude>**/.idea/</exclude>-->
+                                <!--<exclude>**/*.iml</exclude>-->
+                                <!--<exclude>**/*.txt</exclude>-->
+                                <!--<exclude>**/*.load</exclude>-->
+                                <!--<exclude>**/*.flex</exclude>-->
+                                <!--<exclude>**/*.fc</exclude>-->
+                                <!--<exclude>**/*.javascript</exclude>-->
+                                <!--<exclude>**/*.properties</exclude>-->
+                                <!--<exclude>**/*.thrift</exclude>-->
+                                <!--<exclude>**/*.sh</exclude>-->
+                                <!--<exclude>**/*.bat</exclude>-->
+                                <!--<exclude>**/*.md</exclude>-->
+                                <!--<exclude>.git/</exclude>-->
+                                <!--<exclude>.gitignore</exclude>-->
+                                <!--&lt;!&ndash; ASF jenkins box puts the Maven repo in our root directory. &ndash;&gt;-->
+                                <!--<exclude>.repository/</exclude>-->
+                                <!--<exclude>**/.settings/*</exclude>-->
+                                <!--<exclude>**/.classpath</exclude>-->
+                                <!--<exclude>**/.project</exclude>-->
+                                <!--<exclude>**/target/**</exclude>-->
+                                <!--<exclude>**/*.log</exclude>-->
+                                <!--<exclude>CODE_OF_CONDUCT.md</exclude>-->
+                                <!--<exclude>.codecov.yml</exclude>-->
+                                <!--<exclude>.travis.yml</exclude>-->
+                                <!--<exclude>PULL_REQUEST_TEMPLATE.md</exclude>-->
+                                <!--<exclude>CONTRIBUTING.md</exclude>-->
+                                <!--<exclude>README.md</exclude>-->
+                                <!--<exclude>README_CN.md</exclude>-->
+                                <!--<exclude>**/codestyle/*</exclude>-->
+                                <!--<exclude>**/resources/META-INF/**</exclude>-->
+                                <!--<exclude>**/*.factories</exclude>-->
+                                <!--<exclude>**/*.provides</exclude>-->
+                                <!--<exclude>**/*.properties</exclude>-->
+                                <!--<exclude>**/*.json</exclude>-->
+                            <!--</excludes>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
